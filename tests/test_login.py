@@ -17,7 +17,7 @@ class TestLogin(WebDriverWrapper):
     """Invalid Login Test - Data Driven Using .csv file"""
 
     @pytest.mark.parametrize("mobile,error", data_source.test_invalid_login_data)
-    def test_invalid_login(self, mobile,error):
+    def test_invalid_login(self, mobile, error):
         self.driver.find_element(By.XPATH, "//span[@class='hicon fa fa-user-o']").click()
         self.driver.find_element(By.XPATH, "//input[@placeholder='Enter Phone Number']").send_keys("999999999")
         self.driver.find_element(By.XPATH, "//button[normalize-space()='Proceed']").click()
